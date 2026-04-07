@@ -1,6 +1,6 @@
  🤖 Robot Framework AI 错误分析器
 
-  ▎ 智能驱动的自动化测试失败分析工具，结合大语言模型自动定位错误根因，给出可落地修复方案
+  智能驱动的自动化测试失败分析工具，结合大语言模型自动定位错误根因，给出可落地修复方案
 
   🎯 项目简介
 
@@ -37,21 +37,27 @@
   1. 环境准备
 
   # 克隆项目
+
   git clone https://github.com/yanshizhao/robotframework-ai-error-analyzer.git
+
   cd robotframework-ai-analyzer
 
   # 安装依赖
+
   pip install -r requirements.txt
 
   # 配置API Key（替换为你自己的智谱AI Key）
+
   export ZHIPUAI_API_KEY="your_zhipu_api_key_here"
   Windows PowerShell: $env:ZHIPUAI_API_KEY="your_zhipu_api_key_here"
 
   # 复制配置文件模板
+
   cd ai_analyzer/config
   cp config.yaml.template config.yaml
 
   # 如需自定义配置可修改config.yaml，默认配置可直接使用
+
   cd ../../
 
   2. 一键分析
@@ -61,6 +67,7 @@
   3. 查看报告
 
   分析完成后，报告自动生成在 output/analysis_reports/ 目录：
+
   latest.md   # 最新Markdown格式报告，直接打开查看
   latest.json # 最新JSON格式报告，用于系统集成
 
@@ -69,9 +76,11 @@
   1. 运行测试生成output.xml
 
   # 常规Robot运行，指定输出目录
+
   robot --output output/output.xml cases/
 
   # 或使用内置脚本自动运行+分析
+
   scripts/run_tests.bat  # Windows
   scripts/run_tests.sh   # Linux/Mac
 
@@ -98,7 +107,7 @@
   ### 🔧 修复方案
   1. 测试前通过`ps`命令动态获取目标进程PID，不要硬编码
   2. 增加PID合法性校验关键字
-  
+
   ### 📜 完整调用链
   [OK]    连接 SSH服务器
   [ERROR] 采集并分析进程栈内存
@@ -106,6 +115,7 @@
       错误: Failed to download smaps for PID 99999
 
   ## ⚙️ 核心配置
+  
   配置文件路径：`ai_analyzer/config/config.yaml`
   ```yaml
   # AI配置
