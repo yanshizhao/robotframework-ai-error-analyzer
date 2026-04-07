@@ -1,0 +1,230 @@
+2026-04-03 23:23:46 - ai_analyzer - INFO - 开始扫描代码库: C:\Users\Lenovo\Desktop\robotFrameWorkTest\libs
+2026-04-03 23:23:46 - ai_analyzer - INFO - 扫描完成，共索引到 5 个关键字
+2026-04-03 23:23:46 - ai_analyzer - INFO - 开始分析Robot输出文件: reports\output.xml
+2026-04-03 23:23:46 - ai_analyzer - INFO - 解析完成，总用例: 1, 失败: 1, 全局错误: 3
+2026-04-03 23:23:46 - ai_analyzer - INFO - 开始分析测试用例: 单进程栈内存使用率测试
+2026-04-03 23:23:52 - ai_analyzer - WARNING - AI调用失败，1秒后重试: Connection error.
+2026-04-03 23:23:59 - ai_analyzer - WARNING - AI调用失败，2秒后重试: Connection error.
+2026-04-03 23:24:07 - ai_analyzer - ERROR - AI分析失败: AI调用失败，已重试3次: Connection error.
+2026-04-03 23:24:07 - ai_analyzer - INFO - JSON报告已保存到: ./output/analysis_reports\error_analysis_20260403_232407.json
+2026-04-03 23:24:07 - ai_analyzer - INFO - Markdown报告已保存到: ./output/analysis_reports\error_analysis_20260403_232407.md
+2026-04-03 23:28:54 - ai_analyzer - INFO - 开始扫描代码库: C:\Users\Lenovo\Desktop\robotFrameWorkTest\libs
+2026-04-03 23:28:54 - ai_analyzer - INFO - 扫描完成，共索引到 5 个关键字
+2026-04-03 23:28:54 - ai_analyzer - INFO - 开始分析Robot输出文件: reports\output.xml
+2026-04-03 23:28:54 - ai_analyzer - INFO - 解析完成，总用例: 1, 失败: 1, 全局错误: 3
+2026-04-03 23:28:54 - ai_analyzer - INFO - 开始分析测试用例: 单进程栈内存使用率测试
+2026-04-03 23:29:00 - ai_analyzer - WARNING - AI调用失败，1秒后重试: Connection error.
+2026-04-03 23:29:07 - ai_analyzer - WARNING - AI调用失败，2秒后重试: Connection error.
+2026-04-03 23:29:16 - ai_analyzer - ERROR - AI分析失败: AI调用失败，已重试3次: Connection error.
+2026-04-03 23:29:16 - ai_analyzer - INFO - JSON报告已保存到: ./output/analysis_reports\error_analysis_20260403_232916.json
+2026-04-03 23:29:16 - ai_analyzer - INFO - Markdown报告已保存到: ./output/analysis_reports\error_analysis_20260403_232916.md
+2026-04-03 23:34:20 - ai_analyzer - INFO - 开始扫描代码库: C:\Users\Lenovo\Desktop\robotFrameWorkTest\libs
+2026-04-03 23:34:20 - ai_analyzer - INFO - 扫描完成，共索引到 5 个关键字
+2026-04-03 23:34:20 - ai_analyzer - INFO - 开始分析Robot输出文件: reports/output.xml
+2026-04-03 23:34:20 - ai_analyzer - INFO - 解析完成，总用例: 1, 失败: 1, 全局错误: 3
+2026-04-03 23:34:20 - ai_analyzer - INFO - 开始分析测试用例: 单进程栈内存使用率测试
+2026-04-03 23:34:27 - ai_analyzer - ERROR - AI请求详细错误: Connection error.
+2026-04-03 23:34:27 - ai_analyzer - WARNING - AI调用失败，1秒后重试: Connection error.
+2026-04-03 23:34:35 - ai_analyzer - ERROR - AI请求详细错误: Connection error.
+2026-04-03 23:34:35 - ai_analyzer - WARNING - AI调用失败，2秒后重试: Connection error.
+2026-04-03 23:34:43 - ai_analyzer - ERROR - AI请求详细错误: Connection error.
+2026-04-03 23:34:43 - ai_analyzer - ERROR - AI分析失败: AI调用失败，已重试3次: Connection error.
+2026-04-03 23:34:43 - ai_analyzer - INFO - JSON报告已保存到: ./output/analysis_reports\error_analysis_20260403_233443.json
+2026-04-03 23:34:43 - ai_analyzer - INFO - Markdown报告已保存到: ./output/analysis_reports\error_analysis_20260403_233443.md
+2026-04-03 23:51:48 - ai_analyzer - INFO - 开始扫描代码库: C:\Users\Lenovo\Desktop\robotFrameWorkTest\libs
+2026-04-03 23:51:48 - ai_analyzer - INFO - 扫描完成，共索引到 5 个关键字
+2026-04-03 23:51:48 - ai_analyzer - INFO - 开始分析Robot输出文件: reports\output.xml
+2026-04-03 23:51:48 - ai_analyzer - INFO - 解析完成，总用例: 1, 失败: 1, 全局错误: 3
+2026-04-03 23:51:48 - ai_analyzer - INFO - 开始分析测试用例: 单进程栈内存使用率测试
+2026-04-03 23:53:00 - ai_analyzer - INFO - 测试用例 单进程栈内存使用率测试 分析完成
+2026-04-03 23:53:00 - ai_analyzer - INFO - JSON报告已保存到: ./output/analysis_reports\error_analysis_20260403_235300.json
+2026-04-03 23:53:00 - ai_analyzer - INFO - Markdown报告已保存到: ./output/analysis_reports\error_analysis_20260403_235300.md
+2026-04-04 00:01:30 - ai_analyzer - INFO - 开始扫描代码库: C:\Users\Lenovo\Desktop\robotFrameWorkTest\libs
+2026-04-04 00:01:30 - ai_analyzer - INFO - 扫描完成，共索引到 5 个关键字
+2026-04-04 00:01:30 - ai_analyzer - INFO - 开始分析Robot输出文件: reports\output.xml
+2026-04-04 00:01:30 - ai_analyzer - INFO - 解析完成，总用例: 1, 失败: 1, 全局错误: 3
+2026-04-04 00:01:30 - ai_analyzer - INFO - 开始分析测试用例: 单进程栈内存使用率测试
+2026-04-04 00:02:16 - ai_analyzer - INFO - 测试用例 单进程栈内存使用率测试 分析完成
+2026-04-04 00:02:16 - ai_analyzer - INFO - JSON报告已保存到: ./output/analysis_reports\error_analysis_20260404_000216.json
+2026-04-04 00:02:16 - ai_analyzer - INFO - Markdown报告已保存到: ./output/analysis_reports\error_analysis_20260404_000216.md
+2026-04-04 00:14:07 - ai_analyzer - INFO - 开始扫描代码库: C:\Users\Lenovo\Desktop\robotFrameWorkTest\libs
+2026-04-04 00:14:07 - ai_analyzer - INFO - 扫描完成，共索引到 5 个关键字
+2026-04-04 00:14:07 - ai_analyzer - INFO - 开始分析Robot输出文件: reports\output.xml
+2026-04-04 00:14:07 - ai_analyzer - INFO - 解析完成，总用例: 1, 失败: 1, 全局错误: 3
+2026-04-04 00:14:07 - ai_analyzer - INFO - 开始分析测试用例: 单进程栈内存使用率测试
+2026-04-04 00:14:43 - ai_analyzer - INFO - 测试用例 单进程栈内存使用率测试 分析完成
+2026-04-04 00:18:25 - ai_analyzer - INFO - 开始扫描代码库: C:\Users\Lenovo\Desktop\robotFrameWorkTest\libs
+2026-04-04 00:18:25 - ai_analyzer - INFO - 扫描完成，共索引到 5 个关键字
+2026-04-04 00:18:25 - ai_analyzer - INFO - 开始分析Robot输出文件: reports\output.xml
+2026-04-04 00:18:25 - ai_analyzer - INFO - 解析完成，总用例: 1, 失败: 1, 全局错误: 3
+2026-04-04 00:18:25 - ai_analyzer - INFO - 开始分析测试用例: 单进程栈内存使用率测试
+2026-04-04 00:18:59 - ai_analyzer - INFO - 测试用例 单进程栈内存使用率测试 分析完成
+2026-04-04 00:18:59 - ai_analyzer - INFO - JSON报告已保存到: ./output/analysis_reports\error_analysis_20260404_001859.json
+2026-04-04 00:18:59 - ai_analyzer - INFO - Markdown报告已保存到: ./output/analysis_reports\error_analysis_20260404_001859.md
+2026-04-04 00:27:27 - ai_analyzer - INFO - 开始扫描代码库: C:\Users\Lenovo\Desktop\robotFrameWorkTest\libs
+2026-04-04 00:27:27 - ai_analyzer - INFO - 扫描完成，共索引到 5 个关键字
+2026-04-04 00:27:27 - ai_analyzer - INFO - 开始分析Robot输出文件: reports\output.xml
+2026-04-04 00:27:27 - ai_analyzer - INFO - 解析完成，总用例: 1, 失败: 1, 全局错误: 3
+2026-04-04 00:27:27 - ai_analyzer - INFO - 开始分析测试用例: 单进程栈内存使用率测试
+2026-04-04 00:28:23 - ai_analyzer - INFO - 测试用例 单进程栈内存使用率测试 分析完成
+2026-04-04 00:28:23 - ai_analyzer - INFO - JSON报告已保存到: ./output/analysis_reports\error_analysis_20260404_002823.json
+2026-04-04 00:28:23 - ai_analyzer - INFO - Markdown报告已保存到: ./output/analysis_reports\error_analysis_20260404_002823.md
+2026-04-04 01:07:49 - ai_analyzer - INFO - 开始扫描代码库: C:\Users\Lenovo\Desktop\robotFrameWorkTest\libs
+2026-04-04 01:07:49 - ai_analyzer - INFO - 扫描完成，共索引到 5 个关键字
+2026-04-04 01:07:49 - ai_analyzer - INFO - 开始分析Robot输出文件: reports\output.xml
+2026-04-04 01:07:49 - ai_analyzer - INFO - 解析完成，总用例: 1, 失败: 1, 全局错误: 3
+2026-04-04 01:07:49 - ai_analyzer - INFO - 开始分析测试用例: 单进程栈内存使用率测试
+2026-04-04 01:09:33 - ai_analyzer - INFO - 测试用例 单进程栈内存使用率测试 分析完成
+2026-04-04 01:09:33 - ai_analyzer - INFO - JSON报告已保存到: ./output/analysis_reports\error_analysis_20260404_010933.json
+2026-04-04 01:09:33 - ai_analyzer - INFO - Markdown报告已保存到: ./output/analysis_reports\error_analysis_20260404_010933.md
+2026-04-04 10:39:03 - ai_analyzer - INFO - 开始扫描代码库: C:\Users\Lenovo\Desktop\robotFrameWorkTest\libs
+2026-04-04 10:39:03 - ai_analyzer - INFO - 扫描完成，共索引到 5 个关键字
+2026-04-04 10:39:03 - ai_analyzer - INFO - 开始分析Robot输出文件: reports\output.xml
+2026-04-04 10:39:03 - ai_analyzer - INFO - 解析完成，总用例: 1, 失败: 1, 全局错误: 3
+2026-04-04 10:39:03 - ai_analyzer - INFO - 开始分析测试用例: 单进程栈内存使用率测试
+2026-04-04 10:39:30 - ai_analyzer - INFO - 测试用例 单进程栈内存使用率测试 分析完成
+2026-04-04 10:39:30 - ai_analyzer - INFO - JSON报告已保存到: ./output/analysis_reports\error_analysis_20260404_103930.json
+2026-04-04 10:39:30 - ai_analyzer - INFO - Markdown报告已保存到: ./output/analysis_reports\error_analysis_20260404_103930.md
+2026-04-04 10:44:58 - ai_analyzer - INFO - 开始扫描代码库: C:\Users\Lenovo\Desktop\robotFrameWorkTest\libs
+2026-04-04 10:44:58 - ai_analyzer - INFO - 扫描完成，共索引到 5 个关键字
+2026-04-04 10:44:58 - ai_analyzer - INFO - 开始分析Robot输出文件: reports\output.xml
+2026-04-04 10:44:58 - ai_analyzer - INFO - 解析完成，总用例: 1, 失败: 1, 全局错误: 3
+2026-04-04 10:44:58 - ai_analyzer - INFO - 开始分析测试用例: 单进程栈内存使用率测试
+2026-04-04 10:45:41 - ai_analyzer - INFO - 测试用例 单进程栈内存使用率测试 分析完成
+2026-04-04 10:45:41 - ai_analyzer - INFO - JSON报告已保存到: ./output/analysis_reports\error_analysis_20260404_104541.json
+2026-04-04 10:45:41 - ai_analyzer - INFO - Markdown报告已保存到: ./output/analysis_reports\error_analysis_20260404_104541.md
+2026-04-04 11:56:45 - ai_analyzer - INFO - 开始扫描代码库: C:\Users\Lenovo\Desktop\robotFrameWorkTest\libs
+2026-04-04 11:56:45 - ai_analyzer - INFO - 扫描完成，共索引到 5 个关键字
+2026-04-04 11:56:45 - ai_analyzer - INFO - 调试模式已开启，将输出详细日志
+2026-04-04 11:56:45 - ai_analyzer - INFO - 开始分析Robot输出文件: output.xml
+2026-04-04 11:57:44 - ai_analyzer - INFO - 开始扫描代码库: C:\Users\Lenovo\Desktop\robotFrameWorkTest\libs
+2026-04-04 11:57:44 - ai_analyzer - INFO - 扫描完成，共索引到 5 个关键字
+2026-04-04 11:57:44 - ai_analyzer - INFO - 调试模式已开启，将输出详细日志
+2026-04-04 11:57:44 - ai_analyzer - INFO - 开始分析Robot输出文件: reports/output.xml
+2026-04-04 11:57:44 - ai_analyzer - INFO - 解析完成，总用例: 1, 失败: 1, 全局错误: 3
+2026-04-04 11:57:44 - ai_analyzer - INFO - 开始分析测试用例: 单进程栈内存使用率测试
+2026-04-04 11:57:44 - ai_analyzer - DEBUG - [关键字匹配] 未找到: StackMonitorKeywords.连接 SSH服务器
+2026-04-04 11:57:44 - ai_analyzer - DEBUG - [关键字匹配] 成功匹配: StackMonitorKeywords.采集并分析进程栈内存 -> 文件: C:\Users\Lenovo\Desktop\robotFrameWorkTest\libs\StackMonitorKeywords.py:52
+2026-04-04 11:57:44 - ai_analyzer - DEBUG - [关键字匹配] 成功匹配: StackMonitorKeywords.生成栈内存分析报告 -> 文件: C:\Users\Lenovo\Desktop\robotFrameWorkTest\libs\StackMonitorKeywords.py:77
+2026-04-04 11:57:44 - ai_analyzer - DEBUG - ================================================================================
+2026-04-04 11:57:44 - ai_analyzer - DEBUG - 【发送给AI的完整Prompt】
+2026-04-04 11:57:44 - ai_analyzer - DEBUG - ================================================================================
+2026-04-04 11:57:44 - ai_analyzer - DEBUG - [system]:
+你是专业的Robot Framework测试错误分析专家，擅长定位测试失败原因并给出可行的修复方案。
+2026-04-04 11:57:44 - ai_analyzer - DEBUG - [user]:
+你是一个专业的Robot Framework测试错误分析专家，请根据以下信息分析测试失败原因并给出修复方案：
+
+## 测试用例信息
+用例名称: 单进程栈内存使用率测试
+所属套件: Test Stack Usage
+源文件: :18
+错误信息: Failed to download smaps for PID 99999
+标签: production, smoke, stack
+
+## 关键字调用链
+1. 连接 SSH服务器 (来自: StackMonitorKeywords)
+   参数: ${TEST_HOST}, ${TEST_USER}, 密码=ysz3868082
+
+2. 采集并分析进程栈内存 (来自: StackMonitorKeywords)
+   参数: ${TEST_PID}
+   错误: Failed to download smaps for PID 99999
+
+3. Set Variable (来自: BuiltIn)
+   参数: ${OUTPUT_DIR}/stack_monitor/stack_report_${TEST_PID}.json
+
+4. 生成栈内存分析报告 (来自: StackMonitorKeywords)
+   参数: 输出文件路径=${report_path}, 使用率阈值=${USAGE_THRESHOLD}
+
+5. Should Be Equal (来自: BuiltIn)
+   参数: ${status}, PASS
+
+
+
+
+## 相关代码片段
+{'StackMonitorKeywords.采集并分析进程栈内存': {'file_path': 'C:\\Users\\Lenovo\\Desktop\\robotFrameWorkTest\\libs\\StackMonitorKeywords.py', 'line_number': 52, 'code': '    def 采集并分析进程栈内存(self, 进程ID):\n        """\n        采集指定PID的栈内存数据并进行分析\n        :param 进程ID: 目标进程ID\n        :return: (栈上限KB, 实际使用KB)\n        """\n        if not self.ssh_client:\n            raise Exception("请先建立SSH连接")\n\n        # 下载原始数据\n        local_files = self.ssh_client.download_proc_files(int(进程ID))\n        logger.info(f"栈内存原始数据已下载：smaps={local_files[\'smaps\']}, limits={local_files[\'limits\']}")\n\n        # 分析数据\n        analyzer = StackAnalyzer(\n            smaps_file_path=local_files[\'smaps\'],\n            limits_file_path=local_files[\'limits\']\n        )\n        limit_kb, usage_kb = analyzer.analyze_smaps()\n        self.analysis_result = (int(进程ID), limit_kb, usage_kb)\n... (省略了4行)'}, 'StackMonitorKeywords.生成栈内存分析报告': {'file_path': 'C:\\Users\\Lenovo\\Desktop\\robotFrameWorkTest\\libs\\StackMonitorKeywords.py', 'line_number': 77, 'code': '    def 生成栈内存分析报告(self, 输出文件路径=None, 使用率阈值=80.0):\n        """\n        生成栈内存分析报告\n        :param 输出文件路径: 报告保存路径，默认使用系统配置路径\n        :param 使用率阈值: 报警阈值百分比，默认80%\n        :return: 报告结果，PASS/FAIL/ERROR\n        """\n        if not self.analysis_result:\n            raise Exception("请先执行栈内存采集分析")\n\n        pid, limit_kb, usage_kb = self.analysis_result\n        reporter = ReportGenerator(\n            output_file=输出文件路径 if 输出文件路径 else OUTPUT_FILE,\n            threshold=float(使用率阈值)\n        )\n        is_pass = reporter.generate(pid, limit_kb, usage_kb)\n        self.report_path = reporter.output_file\n\n        status = "PASS" if is_pass else "FAIL" if limit_kb > 0 else "ERROR"\n        logger.info(f"分析报告已生成：{self.report_path}，结果：{status}")\n... (省略了1行)'}}
+
+
+请按照以下结构输出分析结果：
+### 1. 错误定位
+明确指出错误发生的具体位置和根本原因
+
+### 2. 影响分析
+说明这个错误会导致什么问题，影响范围有多大
+
+### 3. 修复方案
+给出具体、可执行的修复步骤，代码修改请提供代码片段
+
+### 4. 预防建议
+给出避免同类错误再次发生的建议
+
+要求：
+- 分析要精准，不要泛泛而谈
+- 修复方案要具体，可直接落地
+- 语言简洁明了，专业术语准确
+- 如果无法确定具体原因，请说明可能的原因和排查方向
+2026-04-04 11:57:44 - ai_analyzer - DEBUG - ================================================================================
+2026-04-04 11:58:10 - ai_analyzer - DEBUG - ================================================================================
+2026-04-04 11:58:10 - ai_analyzer - DEBUG - 【AI返回的原始响应】
+2026-04-04 11:58:10 - ai_analyzer - DEBUG - ================================================================================
+2026-04-04 11:58:10 - ai_analyzer - DEBUG - ### 1. 错误定位
+
+*   **错误位置**：`StackMonitorKeywords.采集并分析进程栈内存` 方法（第 52 行附近）。
+*   **具体代码行**：`self.ssh_client.download_proc_files(int(进程ID))`
+*   **根本原因**：在尝试从远程服务器下载 PID 为 `99999` 的进程的 `/proc/[pid]/smaps` 文件时失败。
+    *   **可能原因**：
+        1.  **进程不存在**：PID 99999 可能是一个无效的进程 ID（通常 PID 从 1 开始），或者该进程在测试执行前已经终止。
+        2.  **权限不足**：SSH 用户可能没有权限读取 `/proc` 下的文件。
+        3.  **网络/SSH 问题**：虽然 SSH 连接建立成功，但在下载特定文件时出现超时或连接中断。
+
+### 2. 影响分析
+
+*   **测试直接失败**：由于在关键字调用链的第 2 步抛出异常，导致测试用例无法继续执行后续步骤（Set Variable、生成报告等）。
+*   **数据缺失**：`self.analysis_result` 未被赋值，导致第 4 步“生成栈内存分析报告”因缺少必要数据而报错。
+*   **环境误判**：由于标签包含 `production` 和 `smoke`，该失败会阻塞生产环境的冒烟测试流程，可能影响发布决策。
+
+### 3. 修复方案
+
+建议在 `StackMonitorKeywords.采集并分析进程栈内存` 方法中增加 **异常捕获** 机制，以便更清晰地定位是网络问题还是进程不存在问题。
+
+**修改代码片段** (`StackMonitorKeywords.py`):
+
+```python
+    def 采集并分析进程栈内存(self, 进程ID):
+        """
+        采集指定PID的栈内存数据并进行分析
+        :param 进程ID: 目标进程ID
+        :return: (栈上限KB, 实际使用KB)
+        """
+        if not self.ssh_client:
+            raise Exception("请先建立SSH连接")
+
+        # 下载原始数据
+        try:
+            local_files = self.ssh_client.download_proc_files(int(进程ID))
+            logger.info(f"栈内存原始数据已下载：smaps={local_files['smaps']}, limits={local_files['limits']}")
+        except Exception as e:
+            # 记录详细错误日志，便于排查
+            logger.error(f"下载进程 {进程ID} 的 smaps 失败: {str(e)}")
+            # 重新抛出异常，确保 Robot Framework 能捕获到并标记测试失败
+            raise Exception(f"Failed to download smaps for PID {进程ID}: {str(e)}")
+
+        # 分析数据
+        analyzer = StackAnalyzer(
+            smaps_file_path=local_files['smaps'],
+            limits_file_path=local_files['limits']
+        )
+        limit_kb, usage_kb = analyzer.analyze_smaps()
+        self.analysis_result = (int(进程ID), limit_kb, usage_kb)
+        # ... (省略后续代码)
+```
+
+### 4. 预防建议
+
+1.  **前置校验**：在 Robot Framework 测试用例中，调用 `采集并分析进程栈内存` 之前，先使用 `SSHLibrary` 的 `Execute Command` 检查目标进程是否存在（例如通过 `ps -p ${TEST_PID}` 命令）。
+2.  **日志增强**：在 `download_proc_files` 方法内部增加日志，记录具体的文件路径尝试，以便在失败时知道是哪个文件出了问题。
+3.  **参数校验**：在 `采集并分析进程栈内存` 方法开始处，增加对 `进程ID` 的有效性检查（例如检查是否为 0 或负数）。
+2026-04-04 11:58:10 - ai_analyzer - DEBUG - ================================================================================
+2026-04-04 11:58:10 - ai_analyzer - INFO - 测试用例 单进程栈内存使用率测试 分析完成
+2026-04-04 11:58:10 - ai_analyzer - INFO - JSON报告已保存到: ./output/analysis_reports\error_analysis_20260404_115810.json
+2026-04-04 11:58:10 - ai_analyzer - INFO - Markdown报告已保存到: ./output/analysis_reports\error_analysis_20260404_115810.md

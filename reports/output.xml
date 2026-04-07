@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.3 on win32)" generated="2026-04-04T10:44:54.427783" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Stack Usage" source="C:\Users\Lenovo\Desktop\robotFrameWorkTest\cases\stack_monitor\test_stack_usage.robot">
+<test id="s1-t1" name="单进程栈内存使用率测试" line="18">
+<kw name="连接 SSH服务器" owner="StackMonitorKeywords">
+<msg time="2026-04-04T10:44:54.791933" level="INFO">Connected to 192.168.154.129 as yszlinux02</msg>
+<msg time="2026-04-04T10:44:54.792011" level="INFO">SSH连接成功：192.168.154.129:22，用户名：yszlinux02</msg>
+<msg time="2026-04-04T10:44:54.792065" level="INFO">C:\Users\Lenovo\AppData\Roaming\Python\Python314\site-packages\paramiko\pkey.py:100: CryptographyDeprecationWarning: TripleDES has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.TripleDES and will be removed from cryptography.hazmat.primitives.ciphers.algorithms in 48.0.0.
+  "cipher": algorithms.TripleDES,
+C:\Users\Lenovo\AppData\Roaming\Python\Python314\site-packages\paramiko\transport.py:259: CryptographyDeprecationWarning: TripleDES has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.TripleDES and will be removed from cryptography.hazmat.primitives.ciphers.algorithms in 48.0.0.
+  "class": algorithms.TripleDES,</msg>
+<arg>${TEST_HOST}</arg>
+<arg>${TEST_USER}</arg>
+<arg>密码=ysz3868082</arg>
+<doc>建立与远程Linux服务器的SSH连接
+:param 主机地址: 服务器IP或域名
+:param 用户名: SSH登录用户名
+:param 密码: SSH登录密码（可选，优先使用密钥）
+:param 密钥文件路径: SSH私钥文件路径（可选）
+:param 端口: SSH端口，默认22
+:return: 连接成功返回True，失败抛出异常</doc>
+<status status="PASS" start="2026-04-04T10:44:54.498205" elapsed="0.294159"/>
+</kw>
+<kw name="采集并分析进程栈内存" owner="StackMonitorKeywords">
+<msg time="2026-04-04T10:44:54.792882" level="INFO">Downloading stack-only smaps for PID 99999 to ./data\smaps_99999.txt...</msg>
+<msg time="2026-04-04T10:44:55.005382" level="ERROR">Command failed (2): awk: cannot open /proc/99999/smaps (No such file or directory)
+</msg>
+<msg time="2026-04-04T10:44:55.006071" level="WARN">Stack filtering failed via awk. Falling back to full smaps download...</msg>
+<msg time="2026-04-04T10:44:55.012205" level="ERROR">Command failed (1): cat: /proc/99999/smaps: No such file or directory
+</msg>
+<msg time="2026-04-04T10:44:55.012885" level="FAIL">Failed to download smaps for PID 99999</msg>
+<arg>${TEST_PID}</arg>
+<doc>采集指定PID的栈内存数据并进行分析
+:param 进程ID: 目标进程ID
+:return: (栈上限KB, 实际使用KB)</doc>
+<status status="FAIL" start="2026-04-04T10:44:54.792656" elapsed="0.223227">Failed to download smaps for PID 99999</status>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${report_path}</var>
+<arg>${OUTPUT_DIR}/stack_monitor/stack_report_${TEST_PID}.json</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-04-04T10:44:55.016680" elapsed="0.000172"/>
+</kw>
+<kw name="生成栈内存分析报告" owner="StackMonitorKeywords">
+<var>${status}</var>
+<arg>输出文件路径=${report_path}</arg>
+<arg>使用率阈值=${USAGE_THRESHOLD}</arg>
+<doc>生成栈内存分析报告
+:param 输出文件路径: 报告保存路径，默认使用系统配置路径
+:param 使用率阈值: 报警阈值百分比，默认80%
+:return: 报告结果，PASS/FAIL/ERROR</doc>
+<status status="NOT RUN" start="2026-04-04T10:44:55.017216" elapsed="0.000035"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${status}</arg>
+<arg>PASS</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" start="2026-04-04T10:44:55.017466" elapsed="0.000021"/>
+</kw>
+<doc>测试指定进程栈内存使用率是否在安全范围内</doc>
+<tag>production</tag>
+<tag>smoke</tag>
+<tag>stack</tag>
+<status status="FAIL" start="2026-04-04T10:44:54.497034" elapsed="0.520801">Failed to download smaps for PID 99999</status>
+</test>
+<kw name="关闭 SSH连接" owner="StackMonitorKeywords" type="TEARDOWN">
+<msg time="2026-04-04T10:44:55.020148" level="INFO">SSH connection closed.</msg>
+<msg time="2026-04-04T10:44:55.020200" level="INFO">SSH连接已关闭</msg>
+<doc>关闭当前SSH连接</doc>
+<status status="PASS" start="2026-04-04T10:44:55.019535" elapsed="0.000716"/>
+</kw>
+<doc>远程进程栈内存监控测试用例集</doc>
+<status status="FAIL" start="2026-04-04T10:44:54.429200" elapsed="0.591088"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">production</stat>
+<stat pass="0" fail="1" skip="0">smoke</stat>
+<stat pass="0" fail="1" skip="0">stack</stat>
+</tag>
+<suite>
+<stat name="Test Stack Usage" id="s1" pass="0" fail="1" skip="0">Test Stack Usage</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2026-04-04T10:44:55.005382" level="ERROR">Command failed (2): awk: cannot open /proc/99999/smaps (No such file or directory)
+</msg>
+<msg time="2026-04-04T10:44:55.006071" level="WARN">Stack filtering failed via awk. Falling back to full smaps download...</msg>
+<msg time="2026-04-04T10:44:55.012205" level="ERROR">Command failed (1): cat: /proc/99999/smaps: No such file or directory
+</msg>
+</errors>
+</robot>

@@ -1,0 +1,101 @@
+{
+  "summary": {
+    "total_tests": 1,
+    "passed_tests": 0,
+    "failed_tests": 1,
+    "skipped_tests": 0,
+    "global_errors": 3,
+    "analyzed_at": "2026-04-04T10:39:30.291775",
+    "xml_file": "reports\\output.xml"
+  },
+  "global_errors": [
+    {
+      "time": "2026-04-04T10:38:58.807975",
+      "level": "ERROR",
+      "message": "Command failed (2): awk: cannot open /proc/99999/smaps (No such file or directory)\n"
+    },
+    {
+      "time": "2026-04-04T10:38:58.808315",
+      "level": "WARN",
+      "message": "Stack filtering failed via awk. Falling back to full smaps download..."
+    },
+    {
+      "time": "2026-04-04T10:38:58.814422",
+      "level": "ERROR",
+      "message": "Command failed (1): cat: /proc/99999/smaps: No such file or directory\n"
+    }
+  ],
+  "failed_cases_analysis": [
+    {
+      "test_case": "单进程栈内存使用率测试",
+      "suite": "Test Stack Usage",
+      "source_file": "",
+      "line_number": 18,
+      "status": "FAIL",
+      "error_message": "Failed to download smaps for PID 99999",
+      "tags": [
+        "production",
+        "smoke",
+        "stack"
+      ],
+      "keyword_chain": [
+        {
+          "name": "连接 SSH服务器",
+          "owner": "StackMonitorKeywords",
+          "arguments": [
+            "${TEST_HOST}",
+            "${TEST_USER}",
+            "密码=ysz3868082"
+          ],
+          "status": "PASS",
+          "error_message": null,
+          "children": []
+        },
+        {
+          "name": "采集并分析进程栈内存",
+          "owner": "StackMonitorKeywords",
+          "arguments": [
+            "${TEST_PID}"
+          ],
+          "status": "FAIL",
+          "error_message": "Failed to download smaps for PID 99999",
+          "children": []
+        },
+        {
+          "name": "Set Variable",
+          "owner": "BuiltIn",
+          "arguments": [
+            "${OUTPUT_DIR}/stack_monitor/stack_report_${TEST_PID}.json"
+          ],
+          "status": "NOT RUN",
+          "error_message": null,
+          "children": []
+        },
+        {
+          "name": "生成栈内存分析报告",
+          "owner": "StackMonitorKeywords",
+          "arguments": [
+            "输出文件路径=${report_path}",
+            "使用率阈值=${USAGE_THRESHOLD}"
+          ],
+          "status": "NOT RUN",
+          "error_message": null,
+          "children": []
+        },
+        {
+          "name": "Should Be Equal",
+          "owner": "BuiltIn",
+          "arguments": [
+            "${status}",
+            "PASS"
+          ],
+          "status": "NOT RUN",
+          "error_message": null,
+          "children": []
+        }
+      ],
+      "analysis": "### 1. 错误定位\n\n*   **错误位置**：`StackMonitorKeywords.采集并分析进程栈内存` 方法（第 52 行）。\n*   **根本原因**：\n    目标进程 ID `99999` 在目标服务器上**不存在**或**无效**。\n    错误信息 `Failed to download smaps for PID 99999` 表明，`self.ssh_client.download_proc_files(int(进程ID))` 方法在尝试访问 `/proc/99999/smaps` 文件时失败。这通常是因为：\n    1.  测试变量 `${TEST_PID}` 未被正确赋值为实际运行的进程 ID（例如，使用了默认值或占位符）。\n    2.  目标进程在测试执行前已终止，或测试启动逻辑存在竞态条件（进程未启动即开始采集）。\n\n### 2. 影响分析\n\n*   **测试阻断**：由于该测试带有 `smoke`（冒烟）标签，且在 `production` 环境运行，此次失败将导致冒烟测试套件直接报错，阻断后续的回归测试流程。\n*   **数据缺失**：无法获取栈内存数据，导致无法生成 `stack_report_${TEST_PID}.json` 报告，使得监控数据链路断裂。\n*   **误报风险**：如果错误处理不当，可能会掩盖环境配置问题（如 SSH 连接失败或权限不足），因为错误信息被具体化为了 PID 不存在的错误。\n\n### 3. 修复方案\n\n#### 方案 A：增强 PID 验证逻辑（推荐）\n在采集数据前，先检查进程是否存在。如果不存在，立即抛出明确的错误信息，避免后续无意义的文件下载尝试。\n\n**修改代码片段 (`StackMonitorKeywords.py` 第 52 行附近)：**\n\n```python\ndef 采集并分析进程栈内存(self, 进程ID):\n    \"\"\"\n    采集指定PID的栈内存数据并进行分析\n    :param 进程ID: 目标进程ID\n    :return: (栈上限KB, 实际使用KB)\n    \"\"\"\n    if not self.ssh_client:\n        raise Exception(\"请先建立SSH连接\")\n\n    pid_int = int(进程ID)\n    \n    # 【修复点】增加进程存在性检查\n    # 尝试读取 /proc/[pid]/status 文件，这是判断进程是否存活的最快方式\n    try:\n        self.ssh_client.exec_command(f\"test -f /proc/{pid_int}/status\")\n    except Exception as e:\n        raise Exception(f\"进程 PID {pid_int} 不存在或无法访问。请检查测试用例中的 ${TEST_PID} 变量是否正确。错误详情: {e}\")\n\n    # 下载原始数据\n    local_files = self.ssh_client.download_proc_files(pid_int)\n    logger.info(f\"栈内存原始数据已下载：smaps={local_files['smaps']}, limits={local_files['limits']}\")\n\n    # 分析数据\n    analyzer = StackAnalyzer(\n        smaps_file_path=local_files['smaps'],\n        limits_file_path=local_files['limits']\n    )\n    limit_kb, usage_kb = analyzer.analyze_smaps()\n    self.analysis_result = (pid_int, limit_kb, usage_kb)\n    return limit_kb, usage_kb\n```\n\n#### 方案 B：优化测试用例前置步骤\n确保在调用采集关键字之前，进程已经启动。\n\n**修改 Robot Framework 测试用例：**\n在 `采集并分析进程栈内存` 之前，增加一个等待或检查步骤。\n\n```robotframework\n*** Keywords ***\n检查进程是否运行\n    [Arguments]    ${PID}\n    ${output}=    Run Keyword And Return Status    Execute Command    ps -p ${PID} > /dev/null 2>&1\n    Should Be True    ${output}    msg=进程 PID ${PID} 未运行，无法进行栈内存分析\n\n单进程栈内存使用率测试\n    [Documentation]    单进程栈内存使用率测试\n    # ... 前置步骤 ...\n    \n    # 【修复点】增加进程检查\n    检查进程是否运行    ${TEST_PID}\n    \n    # 调用采集关键字\n    采集并分析进程栈内存    ${TEST_PID}\n    # ... 后续步骤 ...\n```\n\n### 4. 预防建议\n\n1.  **变量初始化检查**：在测试用例开始时，添加日志输出 `${TEST_PID}` 的值，确保它不是 `99999` 这样的占位符，而是真实的 PID。\n2.  **异常捕获与日志**：在 `download_proc_files` 方法内部，建议捕获 `FileNotFoundError` 或 `OSError`，并记录更详细的错误上下文（如 SSH 连接状态、目标路径权限等），以便快速定位是权限问题还是进程不存在问题。\n3.  **健壮性测试**：在冒烟测试中，不仅测试“正常流程”，还应包含“进程不存在”的场景，以验证错误提示是否清晰。",
+      "analyzed_at": "2026-04-04T10:39:30.291735"
+    }
+  ]
+}

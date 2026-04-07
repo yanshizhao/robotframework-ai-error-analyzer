@@ -1,0 +1,79 @@
+{
+  "summary": {
+    "total_tests": 1,
+    "passed_tests": 0,
+    "failed_tests": 1,
+    "skipped_tests": 0,
+    "global_errors": 3,
+    "analyzed_at": "2026-04-04T01:09:33.606815",
+    "xml_file": "reports\\output.xml"
+  },
+  "global_errors": [
+    {
+      "time": "2026-04-04T01:07:46.119159",
+      "level": "ERROR",
+      "message": "Command failed (2): awk: cannot open /proc/99999/smaps (No such file or directory)\n"
+    },
+    {
+      "time": "2026-04-04T01:07:46.119562",
+      "level": "WARN",
+      "message": "Stack filtering failed via awk. Falling back to full smaps download..."
+    },
+    {
+      "time": "2026-04-04T01:07:46.123080",
+      "level": "ERROR",
+      "message": "Command failed (1): cat: /proc/99999/smaps: No such file or directory\n"
+    }
+  ],
+  "failed_cases_analysis": [
+    {
+      "test_case": "单进程栈内存使用率测试",
+      "suite": "Test Stack Usage",
+      "source_file": "",
+      "line_number": 18,
+      "status": "FAIL",
+      "error_message": "Failed to download smaps for PID 99999",
+      "tags": [
+        "production",
+        "smoke",
+        "stack"
+      ],
+      "keyword_chain": [
+        {
+          "name": "Set Variable",
+          "owner": "BuiltIn",
+          "arguments": [
+            "${OUTPUT_DIR}/stack_monitor/stack_report_${TEST_PID}.json"
+          ],
+          "status": "NOT RUN",
+          "error_message": null,
+          "children": []
+        },
+        {
+          "name": "生成栈内存分析报告",
+          "owner": "StackMonitorKeywords",
+          "arguments": [
+            "输出文件路径=${report_path}",
+            "使用率阈值=${USAGE_THRESHOLD}"
+          ],
+          "status": "NOT RUN",
+          "error_message": null,
+          "children": []
+        },
+        {
+          "name": "Should Be Equal",
+          "owner": "BuiltIn",
+          "arguments": [
+            "${status}",
+            "PASS"
+          ],
+          "status": "NOT RUN",
+          "error_message": null,
+          "children": []
+        }
+      ],
+      "analysis": "",
+      "analyzed_at": "2026-04-04T01:09:33.606803"
+    }
+  ]
+}

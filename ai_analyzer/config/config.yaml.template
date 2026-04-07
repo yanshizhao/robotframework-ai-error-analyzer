@@ -1,0 +1,44 @@
+# AI分析器配置模板
+# 使用方法：
+# 1. 复制本文件为 config.yaml
+# 2. 根据实际情况修改配置项
+# 3. 配置文件会被.gitignore自动忽略，不会提交到代码仓库
+
+# AI配置
+ai:
+  temperature: 0.3
+  max_tokens: 4096
+  timeout: 120  # 超时时间2分钟，适配长文本分析
+  max_retries: 3
+
+  # 智谱AI配置
+  zhipuai:
+    api_key: "${ZHIPUAI_API_KEY:-}"  # 建议通过环境变量ZHIPUAI_API_KEY传入，无需硬编码
+    model: glm-4.7-flash             # AI模型，推荐glm-4.7-flash性价比最高
+    enable_thinking: false           # 深度思考开关，更精准但更慢（仅glm-4.7-flash+支持）
+
+# 代码库配置
+codebase:
+  libs_path: ./libs       # 你的Robot Framework关键字库路径
+  indexing:
+    method: naming        # 索引方式: naming(中文关键字)/decorator(@keyword装饰)/config
+    auto_scan: true
+    exclude_dirs:
+      - __pycache__
+      - .git
+      - venv
+
+# 输出配置
+output:
+  reports_dir: ./output/analysis_reports
+  format: both  # 输出格式: markdown | json | both
+  include_code_snippets: true  # 是否在报告中包含相关代码片段
+  max_code_lines: 20           # 每个代码片段最多显示行数
+  save_raw_response: false     # 是否保存AI原始响应（调试用）
+
+# 日志配置
+logger:
+  level: INFO
+  file: ./output/ai_analyzer.log
+  console: true
+  debug: false  # 调试模式：开启后会打印Prompt、AI原始响应、关键字匹配过程

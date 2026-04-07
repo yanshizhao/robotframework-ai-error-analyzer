@@ -1,0 +1,93 @@
+@echo off
+chcp 65001 >nul
+setlocal enabledelayedexpansion
+
+:: ============================================================
+:: Robot Framework 测试运行 + AI错误分析包装脚本
+:: ============================================================
+
+echo ========================================
+echo Robot Framework 测试 + AI错误分析
+echo ========================================
+
+:: 设置环境变量
+:: 优先读取系统环境变量，如果没有设置请手动修改
+set SSH_PASSWORD=%SSH_PASSWORD%
+set TEST_PID=%TEST_PID:-4107%
+set ZHIPUAI_API_KEY=%ZHIPUAI_API_KEY%
+
+:: 本地测试示例配置
+:: set SSH_PASSWORD=你的SSH密码
+:: set TEST_PID=4107
+:: set ZHIPUAI_API_KEY=你的智谱AI API Key
+
+:: 获取脚本所在目录的父目录（项目根目录）
+set SCRIPT_DIR=%~dp0
+cd /d "%SCRIPT_DIR%.."
+
+:: 创建输出目录
+if not exist "output" mkdir "output"
+if not exist "output\temp" mkdir "output\temp"
+if not exist "output\analysis_reports" mkdir "output\analysis_reports"
+
+:: 执行Robot测试
+echo.
+echo [1/2] 开始执行Robot测试...
+echo.
+
+robot --output output\output.xml ^
+      --log output\log.html ^
+      --report output\report.html ^
+      --outputdir output ^
+      --xunit output\xunit.xml ^
+      --loglevel TRACE ^
+      cases\stack_monitor\
+
+set TEST_RESULT=%ERRORLEVEL%
+
+if %TEST_RESULT% EQU 0 (
+    echo.
+    echo ========================================
+    echo 测试执行成功！
+    echo ========================================
+    echo.
+    echo 测试报告: output\report.html
+    echo 日志报告: output\log.html
+    echo.
+    goto :end
+)
+
+:: 测试失败，执行AI错误分析
+echo.
+echo ========================================
+echo 测试执行失败！
+echo ========================================
+echo.
+echo [2/2] 开始AI错误分析...
+echo.
+
+python ai_analyzer\ai_analyzer.py --input output\output.xml
+
+set AI_RESULT=%ERRORLEVEL%
+
+if %AI_RESULT% EQU 0 (
+    echo.
+    echo ========================================
+    echo AI分析完成！
+    echo ========================================
+    echo.
+    echo 测试报告: output\report.html
+    echo 日志报告: output\log.html
+    echo AI分析报告: output\analysis_reports\latest.md
+    echo.
+) else (
+    echo.
+    echo ========================================
+    echo AI分析失败！
+    echo ========================================
+    echo.
+)
+
+:end
+pause
+endlocal
